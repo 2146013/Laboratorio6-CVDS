@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:08:43:00 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-1 26
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:08:43:00 -0500] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:08:50:52 -0500] "GET /helloServlet?name=Danielita HTTP/1.1" 200 25 http-bio-8080-exec-5 1
