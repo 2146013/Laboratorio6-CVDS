@@ -9,13 +9,13 @@ import javax.faces.bean.SessionScoped;
 public class Game {
     public final int reduce = 10000;
 
-    public int numero = (int)Math.random() * (50 - 0 + 1) + 0;
+    public int numero;
     public int intentos;
     public int premio;
     public boolean estado;
 
     public Game(){
-        numero = (int)Math.random() * (50 - 0 + 1) + 0;
+        numero = (int)(Math.random() * ((20 - 0) + 1)) + 0;
         intentos = 0;
         premio = 100000;
         estado = false;
@@ -35,7 +35,7 @@ public class Game {
     }
 
     public void restart(){
-        setNumero((int)Math.random() * (50 - 0 + 1) + 0);
+        setNumero((int)(Math.random() * ((20 - 0) + 1)) + 0);
         setIntentos(0);
         setPremio(100000);
         setEstado(false);
