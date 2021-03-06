@@ -62,4 +62,41 @@ public class ItemServlet extends HttpServlet{
             }  
         }
     }
+
+    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, NumberFormatException {
+        String id1 = req.getParameter("id");
+        int id = 0;
+        ArrayList<Todo> todoList = new ArrayList<Todo>();
+        Writer responseWriter = resp.getWriter();
+        
+        try{
+            id = Integer.parseInt(id1);
+            Todo todo = Service.getTodo(id);
+            todoList.add(todo);
+            String itemsTable = Service.todosToHTMLTable(todoList);
+            resp.setStatus(HttpServletResponse.SC_OK);
+            responseWriter.write(itemsTable);
+            responseWriter.flush();
+        }
+
+        catch(NumberFormatException e0){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+
+        catch(MalformedURLException e1){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+
+        }
+
+        catch(FileNotFoundException e3){
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            responseWriter.write("NO ENCONTRADO");
+        }
+
+        finally{
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);             
+        }
+    }
 }
