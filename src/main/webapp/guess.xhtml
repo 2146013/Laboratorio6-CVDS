@@ -9,15 +9,19 @@
 
     <h:form id="guess_form">
         <h2>Número</h2>
-        <p:outputLabel value="#{Game.getNumero()}"/><br/>
+        <p:outputLabel value="#{Game.getNumero()}" style="display: #{Game.getEstado()}"/><br/>
         <h2>Intentos</h2>
         <p:outputLabel value="#{Game.getIntentos()}"/><br/>
         <h2>Premio actual</h2>
         <p:outputLabel value="#{Game.getPremio()}"/><br/>
+        <h2>Ultimos intentos</h2>
+        <p:outputLabel value="#{Game.getUltimos()}"/><br/>
         <h2>Ingrese un número</h2>
+        <p:outputLabel value="#{Game.getMensaje()}"/><br/><br/>
         <p:inputText id="numero" binding="#{input}" value="0"/><br/>
     </h:form>
     <p:commandButton value="Enviar" update="guess_form" actionListener="#{Game.guess(input.value)}"/>
     <p:commandButton value="Reiniciar" update="guess_form" actionListener="#{Game.restart()}"/>
+
 </h:body>
 </xhtml>
