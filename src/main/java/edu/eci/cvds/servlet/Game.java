@@ -81,12 +81,8 @@ public class Game {
         this.estado = estado;
     }
 
-	public String getUltimos(){
-		String ult = "";
-		for (Integer i: ultimos) {
-			ult = ult + ((int)i) + ", ";
-		}
-		return ult;
+	public ArrayList<Integer> getUltimos(){
+		return ultimos;
 	}
 
     public int getNumero(){
